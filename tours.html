@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Туристична Агенція</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rye&family=UnifrakturMaguntia&family=Yeseva+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Актуальні тури</h1>
+            <nav>
+                <div class="nav-links" id="navLinks">
+                    <ul>
+                        <li><a href="index.html">Головна</a></li>
+                        <li><a href="countries.html">Країни</a></li>
+                        <li><a href="tours.html">Актуальні тури</a></li>
+                        <li><a href="#">Про нас</a></li>
+                        <li><a href="#">Контакти</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="tour-page">
+        <header class="tour-header">
+            <p>Оберіть найкращий тур для незабутньої подорожі.</p>
+        </header>
+        <section class="tour-filters">
+            <form class="filter-form">
+                <select name="country">
+                    <option value="">Всі країни</option>
+                    <option value="france">Франція</option>
+                    <option value="italy">Італія</option>
+                    <option value="germany">Німеччина</option>
+                </select>
+                <select name="duration">
+                    <option value="">Тривалість</option>
+                    <option value="3-5">3-5 днів</option>
+                    <option value="6-10">6-10 днів</option>
+                    <option value="10+">10+ днів</option>
+                </select>
+                <select name="price">
+                    <option value="">Ціна</option>
+                    <option value="low">До $500</option>
+                    <option value="medium">$500-$1000</option>
+                    <option value="high">Понад $1000</option>
+                </select>
+                <button type="submit" class="btn">Знайти тур</button>
+            </form>
+        </section>
+    
+        <section class="tour-list">
+            <div class="tour-card">
+                <img src="images/france.jpg">
+                <h3>Париж, Франція</h3>
+                <p>5 днів / 4 ночі</p>
+                <p>Ціна: $800</p>
+                <a href="paris.html" class="btn">Детальніше</a>
+            </div>
+            <div class="tour-card">
+                <img src="images/Italy.jpg">
+                <h3>Рим, Італія</h3>
+                <p>7 днів / 6 ночей</p>
+                <p>Ціна: $1200</p>
+                <a href="#" class="btn">Детальніше</a>
+            </div>
+            <div class="tour-card">
+                <img src="images/gm.jpg">
+                <h3>Берлін, Німеччина</h3>
+                <p>4 дні / 3 ночі</p>
+                <p>Ціна: $600</p>
+                <a href="#" class="btn">Детальніше</a>
+            </div>
+        </section>
+    </main>    
+    <footer class="footer">
+        <p>&copy; 2024 Туристична Агенція. Всі права захищені.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
