@@ -363,6 +363,9 @@ p {
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .tour-card:hover {
@@ -387,6 +390,11 @@ p {
     font-size: 16px;
     color: #555;
     margin-bottom: 10px;
+    flex-grow: 1; 
+}
+.tour-card .btn {
+    display: inline-block;
+    margin-top: auto; 
 }
 .tour-detail{
     background: #cee2c8;
