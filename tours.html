@@ -19,7 +19,7 @@
                         <li><a href="index.html">Головна</a></li>
                         <li><a href="countries.html">Країни</a></li>
                         <li><a href="tours.html">Актуальні тури</a></li>
-                        <li><a href="#">Про нас</a></li>
+                        <li><a href="about.html">Про нас</a></li>
                         <li><a href="#">Контакти</a></li>
                     </ul>
                 </div>
@@ -58,56 +58,56 @@
         </section>
     
         <section class="tour-list">
-            <div class="tour-card">
+            <div class="tour-card" data-country="france" data-duration="3-5" data-price="medium">
                 <img src="images/france.jpg">
                 <h3>Париж, Франція</h3>
                 <p>5 днів / 4 ночі</p>
                 <p>Ціна: $800</p>
                 <a href="paris.html" class="btn">Детальніше</a>
             </div>
-            <div class="tour-card">
+            <div class="tour-card" data-country="italy" data-duration="3-5" data-price="high">
                 <img src="images/Italy.jpg">
                 <h3>Рим, Італія</h3>
                 <p>5 днів / 4 ночі</p>
                 <p>Ціна: $1200</p>
                 <a href="rome.html" class="btn">Детальніше</a>
             </div>
-            <div class="tour-card">
+            <div class="tour-card" data-country="germany" data-duration="3-5" data-price="medium">
                 <img src="images/gm.jpg">
                 <h3>Берлін, Німеччина</h3>
                 <p>4 дні / 3 ночі</p>
                 <p>Ціна: $650</p>
                 <a href="berlin.html" class="btn">Детальніше</a>
             </div>
-            <div class="tour-card">
+            <div class="tour-card" data-country="france" data-duration="3-5" data-price="medium">
                 <img src="images/Provence.jpg">
                 <h3>Романтика Провансу: Лавандові поля та виноградники, Франція</h3>
                 <p>5 днів / 4 ночі</p>
                 <p>Ціна: $900</p>
                 <a href="Provance.html" class="btn">Детальніше</a>
             </div>
-            <div class="tour-card">
+            <div class="tour-card" data-country="japan" data-duration="6-10" data-price="high">
                 <img src="images/japan.jpg">
                 <h3>Краса стародавньої Японії: Самураї, сакура і чайні церемонії, Японія</h3>
                 <p>7 днів / 6 ночей</p>
                 <p>Ціна: $1500</p>
                 <a href="tour-japan.html" class="btn">Детальніше</a>
             </div>
-            <div class="tour-card">
+            <div class="tour-card" data-country="italy" data-duration="6-10" data-price="high">
                 <img src="images/greece1.jpg">
                 <h3>Перлини Середземномор’я: Італія та Греція</h3>
                 <p>8 днів / 7 ночей</p>
                 <p>Ціна: $1800</p>
                 <a href="Mediterranean.html" class="btn">Детальніше</a>
             </div>
-            <div class="tour-card">
+            <div class="tour-card" data-country="thailand" data-duration="6-10" data-price="high">
                 <img src="images/t7.jpg">
                 <h3>Таїланд: Храми, пляжі та екзотична кухня</h3>
                 <p>10 днів / 9 ночей</p>
                 <p>Ціна: $1500</p>
                 <a href="tour-thai.html" class="btn">Детальніше</a>
             </div>
-            <div class="tour-card">
+            <div class="tour-card" data-country="chezc" data-duration="3-5" data-price="medium">
                 <img src="images/cz3.jpg">
                 <h3>Чехія та Австрія: 5 днів розкоші та культури</h3>
                 <p>5 днів / 4 ночей</p>
@@ -129,9 +129,9 @@
             <div class="footer-section">
                 <h3>Важлива інформація</h3>
                 <ul>
-                    <li><a href="countries.html">Тури по Європі</a></li>
+                    <li><a href="file:///D:/%D0%BA%D0%BE%D0%BB%D0%B5%D0%B4%D0%B6/%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B0%20%D0%B2%D0%B5%D0%B1/travel_agency/tours.html?country=france&duration=3-5&price=">Тури по Європі</a></li>
                     <li><a href="#">Блог</a></li>
-                    <li><a href="#">Про нас</a></li>
+                    <li><a href="about.html">Про нас</a></li>
                     <li><a href="#">~~~~</a></li>
                 </ul>
             </div>
@@ -151,5 +151,32 @@
         </div>
     </footer> 
     <script src="script.js"></script>
+    <script>
+        document.getElementById('filterForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const country = document.getElementById('country').value;
+  const duration = document.getElementById('duration').value;
+  const price = document.getElementById('price').value;
+
+  const tours = document.querySelectorAll('.tour-card');
+  
+  tours.forEach(tour => {
+      const tourCountry = tour.dataset.country;
+      const tourDuration = tour.dataset.duration;
+      const tourPrice = tour.dataset.price;
+
+      const matchesCountry = !country || tourCountry === country;
+      const matchesDuration = !duration || tourDuration === duration;
+      const matchesPrice = !price || tourPrice === price;
+
+      if (matchesCountry && matchesDuration && matchesPrice) {
+          tour.style.display = '';
+      } else {
+          tour.style.display = 'none';
+      }
+  });
+});
+    </script>
 </body>
 </html>

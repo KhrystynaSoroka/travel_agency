@@ -779,3 +779,37 @@ p {
     object-fit: cover;
     height: 150px;
 }
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+.about-photo {
+    max-width: 500px;
+}
+.about-photo img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.about-text {
+    max-width: 700px;
+    padding: 0 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; 
+}
+.about-text h2 {
+font-size: 32px;
+}
+.about-text p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+.about-mission, .about-history {
+    margin-top: 10px;
+}
