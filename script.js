@@ -25,7 +25,12 @@ function showSlides(n) {
 }
 setInterval(() => plusSlides(1), 10000);
 
+const burgerMenu = document.getElementById('burgerMenu');
+const navLinks = document.getElementById('navLinks');
 
+burgerMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+});
 
 
 
