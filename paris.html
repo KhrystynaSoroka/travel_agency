@@ -39,9 +39,18 @@
             <p>Незабутній тур до столиці світла та романтики.</p>
         </section>
         <section class="tour-gallery">
-            <img src="images/eiffel-tower-paris-france-EIFFEL0217-6ccc3553e98946f18c893018d5b42bde.jpg" alt="Ейфелева вежа">    
-            <img src="images/loure.jpg" alt="Лувр">
-            <img src="images/mall.png" alt="Торговий центр">
+            <button class="gallery-btn prev-btn">&#8249;</button>
+            <div class="gallery-container">
+                <img src="images/eiffel-tower-paris-france-EIFFEL0217-6ccc3553e98946f18c893018d5b42bde.jpg" alt="Ейфелева вежа">
+                <img src="images/loure.jpg" alt="Лувр">
+                <img src="images/mall.png" alt="Торговий центр">
+                <img src="images/par1.jpg">
+                <img src="images/par3.jpg">
+                <img src="images/par2.jpg">
+                <img src="images/par4.jpg">
+                <img src="images/par5.jpg">
+            </div>
+            <button class="gallery-btn next-btn">&#8250;</button>
         </section>
         <div class="video-container">
             <iframe 
@@ -58,7 +67,7 @@
             <div class="tour-content">
                 <div class="tour-details">
                     <h2>Опис туру</h2>
-                    <p>Тур до Парижа пропонує 5 днів і 4 ночі в одному з найчарівніших міст світу. Ви відвідаєте Ейфелеву вежу, Лувр, Нотр-Дам та багато інших визначних місць.</p>
+                    <p>Тур до Парижа пропонує 5 днів і 4 ночі в одному з найчарівніших міст світу. Ви відвідаєте Ейфелеву вежу, Лувр та багато інших визначних місць.</p>
         
                     <h3>Програма туру</h3>
                     <ul>
@@ -71,7 +80,8 @@
         
                     <h3>Включено у вартість</h3>
                     <ul>
-                        <li>Проживання у готелі (4 ночі).</li>
+                        <li>Проживання у готелі "Four Seasons Hotel George V
+                            PARIS"(4 ночі).</li>
                         <li>Щоденний сніданок.</li>
                         <li>Трансфери та екскурсії.</li>
                         <li>Послуги гіда.</li>
@@ -135,5 +145,36 @@
     </footer>   
     <script src="script.js"></script>
     <script src="order_tours.js"></script> 
+    <script>
+        const galleryContainer = document.querySelector('.gallery-container');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+
+let currentIndex = 0;
+const photosToShow = window.innerWidth > 768 ? 3 : 1; 
+const photoWidth = galleryContainer.children[0].offsetWidth + 10; 
+
+function updateGalleryPosition() {
+    galleryContainer.style.transform = `translateX(-${currentIndex * photoWidth}px)`;
+}
+
+prevBtn.addEventListener('click', () => {
+    currentIndex = Math.max(currentIndex - photosToShow, 0);
+    updateGalleryPosition();
+});
+
+nextBtn.addEventListener('click', () => {
+    const maxIndex = galleryContainer.children.length - photosToShow;
+    currentIndex = Math.min(currentIndex + photosToShow, maxIndex);
+    updateGalleryPosition();
+});
+
+window.addEventListener('resize', () => {
+    const isMobile = window.innerWidth <= 768;
+    currentIndex = 0; 
+    updateGalleryPosition();
+});
+
+    </script>
 </body>
 </html>
