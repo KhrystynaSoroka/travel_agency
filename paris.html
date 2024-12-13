@@ -83,32 +83,29 @@
             </div>
             <h3>Ціна</h3>
             <p>$800 з особи.</p>
-            <form action="send_booking.php" method="post" class="booking-form">
-                <!-- Вибір туру (приховане поле) -->
-                <input type="hidden" name="tour-name" value="Тур: Париж">
-
-                <!-- Вибір дати -->
-                <label for="date">Дата подорожі</label>
-                <input type="date" id="date" name="date" required>
-
-                <!-- Особиста інформація -->
-                <label for="name">Ваше ім'я</label>
-                <input type="text" id="name" name="name" placeholder="Ваше повне ім'я" required>
-
-                <label for="email">Електронна пошта</label>
-                <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
-
-                <label for="phone">Номер телефону</label>
-                <input type="tel" id="phone" name="phone" placeholder="+380 ХХХ ХХХ ХХХ" required>
-
-                <label for="guests">Кількість гостей</label>
-                <input type="number" id="guests" name="guests" min="1" max="10" value="1" required>
-
-                <label for="comments">Додаткові побажання</label>
-                <textarea id="comments" name="comments" placeholder="Напишіть ваші побажання"></textarea>
-
-                <button type="submit" class="btn">Забронювати</button>
+            <!--форма-->
+            <form action="process_booking.php" method="POST">
+                <label for="name">Ім'я:</label>
+                <input type="text" id="name" name="name" required>
+            
+                <label for="email">Електронна пошта:</label>
+                <input type="email" id="email" name="email" required>
+            
+                <label for="phone">Номер телефону:</label>
+                <input type="tel" id="phone" name="phone" required>
+            
+                <label for="travel_date">Дата подорожі:</label>
+                <input type="date" id="travel_date" name="travel_date" required>
+            
+                <label for="guests">Кількість гостей:</label>
+                <input type="number" id="guests" name="guests" min="1" required>
+            
+                <label for="additional_wishes">Додаткові побажання:</label>
+                <textarea id="additional_wishes" name="additional_wishes"></textarea>
+            
+                <button type="submit">Забронювати</button>
             </form>
+            
         </section>
     </main>
     <footer class="footer">
@@ -127,7 +124,7 @@
                     <li><a href="countries.html">Тури по Європі</a></li>
                     <li><a href="#">Блог</a></li>
                     <li><a href="about.html">Про нас</a></li>
-                    <li><a href="#">~~~~</a></li>
+                    <li><a href="contact.html">Контакти</a></li>
                 </ul>
             </div>
             <div class="footer-section">
