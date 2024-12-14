@@ -14,7 +14,7 @@
         <div class="container">
             <a href="index.html" class="logo"><img src="images/logo.png" alt="Логотип" width="70px"></a>
             <div class="banner-content">
-                <h1>Наш Блог</h1>
+                <h1>Питання та Відповіді</h1>
                 <nav>
                     <div class="nav-links" id="navLinks">
                         <ul>
@@ -37,31 +37,51 @@
     </header> 
     <main class="faq-container">
         <section class="faq-header">
-            <h1>Питання та Відповіді</h1>
+            <h2>Питання та Відповіді</h2>
             <p>Відповіді на найпоширеніші питання про наші послуги</p>
         </section>
 
-        <section class="faq-list">
-            <article class="faq-item">
-                <h2>Як забронювати тур?</h2>
-                <p>Ви можете забронювати тур через нашу форму на сайті, зателефонувавши нам або відвідавши наш офіс.</p>
-            </article>
+        <div class="faq">
+            <button class="accordion">Як забронювати тур? <p>&#9207;</p></button>
+            <div class="panel">
+                <p>Ви можете забронювати тур через наш вебсайт або зв'язатися з нами за телефоном.</p>
+            </div>
+        </div>
 
-            <article class="faq-item">
-                <h2>Які документи потрібні для поїздки?</h2>
-                <p>Для міжнародних поїздок вам потрібен закордонний паспорт, віза (якщо необхідно) та страховий поліс. Ми надаємо детальну інформацію після бронювання.</p>
-            </article>
-
-            <article class="faq-item">
-                <h2>Чи можна скасувати бронювання?</h2>
-                <p>Так, ви можете скасувати бронювання відповідно до наших умов скасування. Деталі вказані у вашому договорі.</p>
-            </article>
-
-            <article class="faq-item">
-                <h2>Чи є знижки для груп?</h2>
-                <p>Так, ми пропонуємо знижки для груп від 10 осіб. Для отримання детальнішої інформації зв'яжіться з нами.</p>
-            </article>
-        </section>
+        <div class="faq">
+            <button class="accordion">Чи можна скасувати бронювання? <p>&#9207;</p></button>
+            <div class="panel">
+                <p>Так, ви можете скасувати бронювання, але умови залежать від конкретного туру.</p>
+            </div>
+        </div>
+        <div class="faq">
+            <button class="accordion">Які документи потрібні для подорожі? <p>&#9207;</p></button>
+            <div class="panel">
+                <p>Залежно від країни, вам може знадобитися закордонний паспорт, віза, медичне страхування та інші документи. Перевіряйте вимоги перед поїздкою.</p>
+            </div>
+        </div>
+        
+        <div class="faq">
+            <button class="accordion">Чи є знижки для групових поїздок? <p>&#9207;</p></button>
+            <div class="panel">
+                <p>Так, ми надаємо знижки для груп від 5 осіб. Для детальної інформації зв'яжіться з нашими менеджерами.</p>
+            </div>
+        </div>
+        
+        <div class="faq">
+            <button class="accordion">Чи можна змінити дату туру? <p>&#9207;</p></button>
+            <div class="panel">
+                <p>Так, зміна дати можлива, але за умови наявності вільних місць та дотримання умов тарифу.</p>
+            </div>
+        </div>
+        
+        <div class="faq">
+            <button class="accordion">Як отримати підтримку під час подорожі? <p>&#9207;</p></button>
+            <div class="panel">
+                <p>Наші туристи мають доступ до цілодобової підтримки. Телефонуйте за вказаними номерами або пишіть у месенджери.</p>
+            </div>
+        </div>
+        
     </main>
 
 
@@ -101,5 +121,21 @@
         </div>
     </footer>    
     <script src="script.js"></script>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
 </body>
 </html>
