@@ -21,6 +21,7 @@
                             <li><a href="index.html">Головна</a></li>
                             <li><a href="countries.html">Країни</a></li>
                             <li><a href="tours.html">Актуальні тури</a></li>
+                            <li><a href="blog.html">Блог</a></li>
                             <li><a href="about.html">Про нас</a></li>
                             <li><a href="contact.html">Контакти</a></li>
                         </ul>
@@ -40,9 +41,17 @@
             <p>Відкрийте для себе дивовижну культуру Таїланду з його мальовничими храмами, білосніжними пляжами та неповторними кулінарними смаками.</p>
         </section>
         <section class="tour-gallery">
-            <img src="images/th1.jpg">
-            <img src="images/th2.jpg">
-            <img src="images/th3.jpg">
+            <button class="gallery-btn prev-btn">&#8249;</button>
+            <div class="gallery-container">
+                <img src="images/th1.jpg">
+                <img src="images/th2.jpg">
+                <img src="images/th3.jpg">
+                <img src="images/tha1.jpg">
+                <img src="images/tha2.jpg">
+                <img src="images/tha3.jpg">
+                <img src="images/tha4.jpg">
+            </div>
+            <button class="gallery-btn next-btn">&#8250;</button>
         </section>
         <div class="video-container">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/vVkK_r4-lI4?si=64p57J1QneSIDFAd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -68,7 +77,7 @@
 
                     <h3>Включено у вартість</h3>
                     <ul>
-                        <li>Проживання у 4-зіркових готелях (9 ночей).</li>
+                        <li>Проживання у 4-зіркових готелях "Maitria Mode Sukhumvit", "Ibis Styles Phuket City" (9 ночей).</li>
                         <li>Щоденні сніданки.</li>
                         <li>Трансфери та екскурсії.</li>
                         <li>Послуги гіда.</li>
@@ -81,7 +90,28 @@
             </div>
             <h3>Ціна</h3>
             <p>$1500 з особи.</p>
-            <a href="#" class="btn">Забронювати</a>
+            <div class="background">
+                <div class="booking-form">
+                <h2>Бронювання туру:</h2>
+                <form id="bookingForm">
+                <label for="name">Введіть ваше ім'я:</label>
+                <input type="text" name="name" id="name" required>
+                <label for="email">Введіть ваш Email:</label>
+                <input type="email" name="email" id="email" required>
+                <label for="tel">Введіть ваш номер телефону:</label>
+                <input type="tel" name="phone" id="tel" required>
+                <label for="travel_date">Дата відправлення:</label>
+                <input type="date" name="travel_date" id="travel_date" required>
+                <label for="guests">Кількість гостей:</label>
+                <input type="number" name="guests" id="guests" required>
+                <label for="additional_wishes">Додаткові побажання</label>
+                <textarea name="additional_wishes" id="additional_wishes"></textarea>
+                <button type="submit" class="btn">Забронювати</button>
+                <p>Ми зв'яжемося з вами для підтвердження.</p>
+                </form>
+                <div id="message" style="margin-top: 10px; color: rgb(34, 56, 34); text-align: center;"></div>
+                </div>
+            </div> 
         </section>
             
     </main>
@@ -120,5 +150,7 @@
         </div>
     </footer>
     <script src="script.js"></script>    
+    <script src="order_tours.js"></script> 
+    <script src="gallery.js"></script>
 </body>
 </html>

@@ -21,6 +21,7 @@
                             <li><a href="index.html">Головна</a></li>
                             <li><a href="countries.html">Країни</a></li>
                             <li><a href="tours.html">Актуальні тури</a></li>
+                            <li><a href="blog.html">Блог</a></li>
                             <li><a href="about.html">Про нас</a></li>
                             <li><a href="contact.html">Контакти</a></li>
                         </ul>
@@ -39,14 +40,21 @@
             <p>Подорожуйте через серце Європи, відвідаючи дивовижні пам'ятки Праги та Відня, і насолоджуйтеся неперевершеними культурними традиціями цих країн.</p>
         </section>
         <section class="tour-gallery">
-            <img src="images/cz1.jpeg">
-            <img src="images/cz1.jpg">
-            <img src="images/cz2.jpg">
+            <button class="gallery-btn prev-btn">&#8249;</button>
+            <div class="gallery-container">
+                <img src="images/cz1.jpeg">
+                <img src="images/cz1.jpg">
+                <img src="images/cz2.jpg">
+                <img src="images/cze1.jpg">
+                <img src="images/cze2.jpg">
+                <img src="images/cze3.jpg">
+            </div>
+            <button class="gallery-btn next-btn">&#8250;</button>
         </section>
-        <div class="tour-gallery">
+        <section class="video-container">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/eKYy61RT1TU?si=4kjrYzM4xJLVj3qB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/KGOS1UUlgu0?si=JR-oGsUE3-hjNgyK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
+        </section>
         <section class="tour-info">
             <div class="tour-content">
                 <div class="tour-details">
@@ -63,7 +71,7 @@
 
                     <h3>Включено у вартість</h3>
                     <ul>
-                        <li>Проживання у 4-зіркових готелях (4 ночі).</li>
+                        <li>Проживання у 4-зіркових готелях "Don Giovanni Hotel Prague", ""(4 ночі).</li>
                         <li>Сніданки та одна вечеря.</li>
                         <li>Трансфери між містами.</li>
                         <li>Екскурсії з професійними гідами.</li>
@@ -75,7 +83,28 @@
             </div>
             <h3>Ціна</h3>
             <p>$900 з особи.</p>
-            <a href="#" class="btn">Забронювати</a>
+            <div class="background">
+                <div class="booking-form">
+                <h2>Бронювання туру:</h2>
+                <form id="bookingForm">
+                <label for="name">Введіть ваше ім'я:</label>
+                <input type="text" name="name" id="name" required>
+                <label for="email">Введіть ваш Email:</label>
+                <input type="email" name="email" id="email" required>
+                <label for="tel">Введіть ваш номер телефону:</label>
+                <input type="tel" name="phone" id="tel" required>
+                <label for="travel_date">Дата відправлення:</label>
+                <input type="date" name="travel_date" id="travel_date" required>
+                <label for="guests">Кількість гостей:</label>
+                <input type="number" name="guests" id="guests" required>
+                <label for="additional_wishes">Додаткові побажання</label>
+                <textarea name="additional_wishes" id="additional_wishes"></textarea>
+                <button type="submit" class="btn">Забронювати</button>
+                <p>Ми зв'яжемося з вами для підтвердження.</p>
+                </form>
+                <div id="message" style="margin-top: 10px; color: rgb(34, 56, 34); text-align: center;"></div>
+                </div>
+            </div>
         </section>
             
     </main>
@@ -113,6 +142,8 @@
             <a href=""><img src="images/4.png"></a>
         </div>
     </footer>  
-    <script src="script.js"></script>  
+    <script src="script.js"></script> 
+    <script src="order_tours.js"></script> 
+    <script src="gallery.js"></script>  
 </body>
 </html>

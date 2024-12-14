@@ -21,6 +21,7 @@
                             <li><a href="index.html">Головна</a></li>
                             <li><a href="countries.html">Країни</a></li>
                             <li><a href="tours.html">Актуальні тури</a></li>
+                            <li><a href="blog.html">Блог</a></li>
                             <li><a href="about.html">Про нас</a></li>
                             <li><a href="contact.html">Контакти</a></li>
                         </ul>
@@ -94,19 +95,28 @@
             <h3>Ціна</h3>
             <p>$800 з особи.</p>
             <!--форма-->
-            <form id="bookingForm">
-                <input type="text" name="name" placeholder="Ваше ім'я" required>
-                <input type="email" name="email" placeholder="Ваш email" required>
-                <input type="tel" name="phone" placeholder="Ваш телефон" required>
-                <input type="date" name="travel_date" required>
-                <input type="number" name="guests" placeholder="Кількість гостей" required>
-                <textarea name="additional_wishes" placeholder="Додаткові побажання"></textarea>
+            <div class="background">
+                <div class="booking-form">
+                <h2>Бронювання туру:</h2>
+                <form id="bookingForm">
+                <label for="name">Введіть ваше ім'я:</label>
+                <input type="text" name="name" id="name" required>
+                <label for="email">Введіть ваш Email:</label>
+                <input type="email" name="email" id="email" required>
+                <label for="tel">Введіть ваш номер телефону:</label>
+                <input type="tel" name="phone" id="tel" required>
+                <label for="travel_date">Дата відправлення:</label>
+                <input type="date" name="travel_date" id="travel_date" required>
+                <label for="guests">Кількість гостей:</label>
+                <input type="number" name="guests" id="guests" required>
+                <label for="additional_wishes">Додаткові побажання</label>
+                <textarea name="additional_wishes" id="additional_wishes"></textarea>
                 <button type="submit" class="btn">Забронювати</button>
                 <p>Ми зв'яжемося з вами для підтвердження.</p>
-            </form>
-            
-            <div id="message" style="margin-top: 10px; color: rgb(34, 56, 34);"></div>
-            
+                </form>
+                <div id="message" style="margin-top: 10px; color: rgb(34, 56, 34); text-align: center;"></div>
+                </div>
+            </div>   
         </section>
     </main>
     <footer class="footer">
@@ -145,36 +155,6 @@
     </footer>   
     <script src="script.js"></script>
     <script src="order_tours.js"></script> 
-    <script>
-        const galleryContainer = document.querySelector('.gallery-container');
-const prevBtn = document.querySelector('.prev-btn');
-const nextBtn = document.querySelector('.next-btn');
-
-let currentIndex = 0;
-const photosToShow = window.innerWidth > 768 ? 3 : 1; 
-const photoWidth = galleryContainer.children[0].offsetWidth + 10; 
-
-function updateGalleryPosition() {
-    galleryContainer.style.transform = `translateX(-${currentIndex * photoWidth}px)`;
-}
-
-prevBtn.addEventListener('click', () => {
-    currentIndex = Math.max(currentIndex - photosToShow, 0);
-    updateGalleryPosition();
-});
-
-nextBtn.addEventListener('click', () => {
-    const maxIndex = galleryContainer.children.length - photosToShow;
-    currentIndex = Math.min(currentIndex + photosToShow, maxIndex);
-    updateGalleryPosition();
-});
-
-window.addEventListener('resize', () => {
-    const isMobile = window.innerWidth <= 768;
-    currentIndex = 0; 
-    updateGalleryPosition();
-});
-
-    </script>
+    <script src="gallery.js"></script>
 </body>
 </html>

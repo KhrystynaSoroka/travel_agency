@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Контакти</title>
+    <title>Туристична Агенція</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,7 @@
         <div class="container">
             <a href="index.html" class="logo"><img src="images/logo.png" alt="Логотип" width="70px"></a>
             <div class="banner-content">
-                <h1>Контакти</h1>
+                <h1>Наш Блог</h1>
                 <nav>
                     <div class="nav-links" id="navLinks">
                         <ul>
@@ -34,48 +34,44 @@
                 </div>
             </div>
         </div>
-    </header>    
-    <main>
-        <section class="contact-section">
-            <div class="contact-info">
-                <h2>Зв'яжіться з нами</h2>
-                <div class="info-box">
-                    <h3>Наша адреса</h3>
-                    <p>вулиця Івана Пулюя, 42, Львів, Львівська область, 79060</p>
-                </div>
-                <div class="info-box">
-                    <h3>Телефони</h3>
-                    <p>+38 098 123 45 67</p>
-                    <p>+38 032 123 45 68</p>
-                </div>
-                <div class="info-box">
-                    <h3>Електронна пошта</h3>
-                    <p><a href="mailto:info@touragency.com">info@touragency.com</a></p>
-                </div>
-            </div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5150.506888012439!2d23.988720973713306!3d49.800102721472044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473ae7ba97e40c93%3A0x6208424af185a10!2z0LLRg9C70LjRhtGPINCG0LLQsNC90LAg0J_Rg9C70Y7RjywgNDIsINCb0YzQstGW0LIsINCb0YzQstGW0LLRgdGM0LrQsCDQvtCx0LvQsNGB0YLRjCwgNzkwMDA!5e0!3m2!1suk!2sua!4v1734026794098!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            <form action="submit_contact_form.php" method="POST" class="contact-form">
-                <h3>Напишіть нам</h3>
-                <label for="name">Ваше ім'я:</label>
-                <input type="text" id="name" name="name" required>
+    </header> 
+    <main class="faq-container">
+        <section class="faq-header">
+            <h1>Питання та Відповіді</h1>
+            <p>Відповіді на найпоширеніші питання про наші послуги</p>
+        </section>
 
-                <label for="email">Ваш email:</label>
-                <input type="email" id="email" name="email" required>
+        <section class="faq-list">
+            <article class="faq-item">
+                <h2>Як забронювати тур?</h2>
+                <p>Ви можете забронювати тур через нашу форму на сайті, зателефонувавши нам або відвідавши наш офіс.</p>
+            </article>
 
-                <label for="message">Повідомлення:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
+            <article class="faq-item">
+                <h2>Які документи потрібні для поїздки?</h2>
+                <p>Для міжнародних поїздок вам потрібен закордонний паспорт, віза (якщо необхідно) та страховий поліс. Ми надаємо детальну інформацію після бронювання.</p>
+            </article>
 
-                <button type="submit" class="btn">Відправити</button>
-            </form>
+            <article class="faq-item">
+                <h2>Чи можна скасувати бронювання?</h2>
+                <p>Так, ви можете скасувати бронювання відповідно до наших умов скасування. Деталі вказані у вашому договорі.</p>
+            </article>
+
+            <article class="faq-item">
+                <h2>Чи є знижки для груп?</h2>
+                <p>Так, ми пропонуємо знижки для груп від 10 осіб. Для отримання детальнішої інформації зв'яжіться з нами.</p>
+            </article>
         </section>
     </main>
+
+
 
     <footer class="footer">
         <div class="container">
             
             <div class="footer-section">
                 <h3>Наша адреса</h3>
-                <p>вулиця Івана Пулюя, 42, Львів, Львівська область, 79060</p>
+                <p>79000, м. Львів, вул. Городоцька, 20</p>
                 <p>+38 098 123 45 67</p>
                 <p>+38 032 123 45 67</p>
                 <p>info@touragency.com</p>
@@ -86,7 +82,7 @@
                     <li><a href="countries.html">Тури по Європі</a></li>
                     <li><a href="#">Блог</a></li>
                     <li><a href="about.html">Про нас</a></li>
-                    <li><a href="contact.html">Контакти</a></li>
+                    <li><a href="#">~~~~</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -103,7 +99,7 @@
             <a href=""><img src="images/3.png"></a>
             <a href=""><img src="images/4.png"></a>
         </div>
-    </footer>   
+    </footer>    
     <script src="script.js"></script>
 </body>
 </html>
