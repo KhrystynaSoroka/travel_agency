@@ -1311,113 +1311,64 @@ font-size: 32px;
 .two label a{
     text-decoration: none;
     color: #fff;
-
 }
 
 
 
-.ui-w-80 {
-    width : 80px !important;
-    height: auto;
+.profile-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.btn-default {
-    border-color: rgba(24, 28, 33, 0.1);
-    background  : rgba(0, 0, 0, 0);
-    color       : #4E5155;
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-label.btn {
-    margin-bottom: 0;
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-.btn-outline-primary {
-    border-color: #26B4FF;
-    background  : transparent;
-    color       : #26B4FF;
+.profile-header .profile-img img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin-right: 20px;
 }
 
-.btn {
-    cursor: pointer;
+.profile-details h2 {
+    font-size: 24px;
+    margin: 0;
 }
 
-.text-light {
-    color: #babbbc !important;
+.profile-details p {
+    font-size: 16px;
+    color: #555;
 }
 
-.btn-facebook {
-    border-color: rgba(0, 0, 0, 0);
-    background  : #3B5998;
-    color       : #fff;
+.profile-info {
+    width: 100%;
+    margin: 20px 0;
 }
 
-.btn-instagram {
-    border-color: rgba(0, 0, 0, 0);
-    background  : #000;
-    color       : #fff;
+.profile-info h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
 }
 
-.card {
-    background-clip: padding-box;
-    box-shadow     : 0 1px 4px rgba(24, 28, 33, 0.012);
+.profile-actions {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
 }
 
-.row-bordered {
-    overflow: hidden;
-}
-
-.account-settings-fileinput {
-    position  : absolute;
-    visibility: hidden;
-    width     : 1px;
-    height    : 1px;
-    opacity   : 0;
-}
-
-.account-settings-links .list-group-item.active {
-    font-weight: bold !important;
-}
-
-html:not(.dark-style) .account-settings-links .list-group-item.active {
-    background: transparent !important;
-}
-
-.account-settings-multiselect~.select2-container {
-    width: 100% !important;
-}
-
-.light-style .account-settings-links .list-group-item {
-    padding     : 0.85rem 1.5rem;
-    border-color: rgba(24, 28, 33, 0.03) !important;
-}
-
-.light-style .account-settings-links .list-group-item.active {
-    color: #4e5155 !important;
-}
-
-.material-style .account-settings-links .list-group-item {
-    padding     : 0.85rem 1.5rem;
-    border-color: rgba(24, 28, 33, 0.03) !important;
-}
-
-.material-style .account-settings-links .list-group-item.active {
-    color: #4e5155 !important;
-}
-
-.dark-style .account-settings-links .list-group-item {
-    padding     : 0.85rem 1.5rem;
-    border-color: rgba(255, 255, 255, 0.03) !important;
-}
-
-.dark-style .account-settings-links .list-group-item.active {
-    color: #fff !important;
-}
-
-.light-style .account-settings-links .list-group-item.active {
-    color: #4E5155 !important;
-}
-
-.light-style .account-settings-links .list-group-item {
-    padding     : 0.85rem 1.5rem;
-    border-color: rgba(24, 28, 33, 0.03) !important;
+.profile-actions button:hover {
+    opacity: 0.8;
 }
