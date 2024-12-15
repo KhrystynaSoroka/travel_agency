@@ -1372,3 +1372,40 @@ font-size: 32px;
 .profile-actions button:hover {
     opacity: 0.8;
 }
+
+
+.slider-container1 {
+    position: relative;
+    width: 90%;  /* або вказати фіксовану ширину */
+    margin: 0 auto;
+}
+
+.slider1 {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+}
+
+.slider-track1 {
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.slider-btn1 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prev-btn1 {
+    left: 0;
+}
+
+.next-btn1 {
+    right: 0;
+}

@@ -16,9 +16,10 @@ $phone = htmlspecialchars($_POST['phone']);
 $travel_date = htmlspecialchars($_POST['travel_date']);
 $guests = (int)$_POST['guests'];
 $additional_wishes = htmlspecialchars($_POST['additional_wishes']);
+$tour = htmlspecialchars($_POST['tour']); 
 
-$stmt = $conn->prepare("INSERT INTO bookings (name, email, phone, travel_date, guests, additional_wishes) VALUES (?, ?, ?, ?, ?, ?)");
-$stmt->bind_param("ssssis", $name, $email, $phone, $travel_date, $guests, $additional_wishes);
+$stmt = $conn->prepare("INSERT INTO bookings (name, email, phone, travel_date, guests, additional_wishes, tour) VALUES (?, ?, ?, ?, ?, ?, ?)");
+$stmt->bind_param("ssssiss", $name, $email, $phone, $travel_date, $guests, $additional_wishes, $tour);
 
 if ($stmt->execute()) {
     echo "Бронювання успішно додано!";

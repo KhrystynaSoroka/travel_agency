@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Туристична Агенція</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .tour-card {
+    width: 400px;  
+    padding: 10px;
+    box-sizing: border-box;
+    margin-right: 10px;
+      }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rye&family=UnifrakturMaguntia&family=Yeseva+One&display=swap" rel="stylesheet">
@@ -118,6 +126,24 @@
                 <p>Завжди вигідні ціни та спеціальні пропозиції.</p>
             </div>
         </section>
+
+        <section class="popular-tours">
+            <h2 align="center">Популярні тури</h2>
+            <div class="slider-container1">
+                <button class="slider-btn1 prev-btn1">&#8249;</button>
+                <div class="slider1">
+                    <div class="slider-track1">
+
+                    </div>
+                </div>
+                <button class="slider-btn1 next-btn1">&#8250;</button>
+            </div>
+        </section>
+        
+        
+
+
+
         <section class="testimonials"> 
             <h1>Відгуки наших клієнтів</h1>
             <div class="row">
@@ -237,5 +263,70 @@ function showSlides(n) {
 setInterval(() => plusSlides(1), 10000);
 
     </script>
+    <script>
+        async function loadToursFromPage() {
+    try {
+        // Отримуємо HTML сторінки
+        const response = await fetch("tours.html");
+        const text = await response.text();
+
+        // Парсимо HTML
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(text, "text/html");
+
+        // Знаходимо картки турів
+        const tourCards = doc.querySelectorAll(".tour-card");
+
+        // Додаємо перші 5 карток у слайдер
+        const sliderTrack = document.querySelector(".slider-track1");
+        const fragment = document.createDocumentFragment(); // Для мінімізації маніпуляцій з DOM
+
+        tourCards.forEach((card, index) => {
+            if (index < 5) {
+                fragment.appendChild(card.cloneNode(true)); // Копіюємо елементи
+            }
+        });
+
+        sliderTrack.appendChild(fragment); // Додаємо фрагмент одразу
+
+    } catch (error) {
+        console.error("Помилка завантаження турів зі сторінки:", error);
+    }
+}
+
+loadToursFromPage();
+
+// Слайдер логіка
+let currentIndex = 0;
+
+function moveSlider(direction) {
+    const sliderTrack = document.querySelector(".slider-track1");
+    const cards = document.querySelectorAll(".tour-card");
+    const cardWidth = cards[0].offsetWidth + 10; // Ширина картки з відступами
+
+    // Переміщуємо слайдер
+    currentIndex += direction;
+
+    // Обмеження для кнопки назад
+    if (currentIndex < 0) {
+        currentIndex = 0;
+    }
+
+    // Обмеження для кнопки вперед
+    if (currentIndex > cards.length - 3) {
+        currentIndex = cards.length - 3;
+    }
+
+    // Зміщуємо слайдер за допомогою transform
+    sliderTrack.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+}
+
+// Обробка подій на кнопки
+document.querySelector(".prev-btn1").addEventListener("click", () => moveSlider(-1));
+document.querySelector(".next-btn1").addEventListener("click", () => moveSlider(1));
+
+    </script>
+    
+    
 </body>
 </html>
