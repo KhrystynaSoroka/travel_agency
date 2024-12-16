@@ -181,7 +181,7 @@
             <h1>Хочете підібрати тур швидко і за найбільш вигідною ціною?</h1>
             <p>Залиште заявку і вам допоможе один з наших експертів!</p>
             <div class="form-content">
-                <form class="contact-form1"><!--action="send_email.php" method="POST"-->
+                <form class="contact-form1">
                     <div class="form-row">
                         <div class="form-group">
                             <input type="text" id="name" name="name" placeholder="Ваше ім’я" required>
@@ -266,28 +266,20 @@ setInterval(() => plusSlides(1), 10000);
     <script>
         async function loadToursFromPage() {
     try {
-        // Отримуємо HTML сторінки
         const response = await fetch("tours.html");
         const text = await response.text();
-
-        // Парсимо HTML
         const parser = new DOMParser();
         const doc = parser.parseFromString(text, "text/html");
-
-        // Знаходимо картки турів
         const tourCards = doc.querySelectorAll(".tour-card");
-
-        // Додаємо перші 5 карток у слайдер
         const sliderTrack = document.querySelector(".slider-track1");
-        const fragment = document.createDocumentFragment(); // Для мінімізації маніпуляцій з DOM
-
+        const fragment = document.createDocumentFragment(); 
         tourCards.forEach((card, index) => {
             if (index < 5) {
-                fragment.appendChild(card.cloneNode(true)); // Копіюємо елементи
+                fragment.appendChild(card.cloneNode(true));
             }
         });
 
-        sliderTrack.appendChild(fragment); // Додаємо фрагмент одразу
+        sliderTrack.appendChild(fragment);
 
     } catch (error) {
         console.error("Помилка завантаження турів зі сторінки:", error);
@@ -296,32 +288,25 @@ setInterval(() => plusSlides(1), 10000);
 
 loadToursFromPage();
 
-// Слайдер логіка
+
 let currentIndex = 0;
 
 function moveSlider(direction) {
     const sliderTrack = document.querySelector(".slider-track1");
     const cards = document.querySelectorAll(".tour-card");
-    const cardWidth = cards[0].offsetWidth + 10; // Ширина картки з відступами
-
-    // Переміщуємо слайдер
+    const cardWidth = cards[0].offsetWidth + 10; 
     currentIndex += direction;
-
-    // Обмеження для кнопки назад
     if (currentIndex < 0) {
         currentIndex = 0;
     }
 
-    // Обмеження для кнопки вперед
     if (currentIndex > cards.length - 3) {
         currentIndex = cards.length - 3;
     }
 
-    // Зміщуємо слайдер за допомогою transform
     sliderTrack.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
 }
 
-// Обробка подій на кнопки
 document.querySelector(".prev-btn1").addEventListener("click", () => moveSlider(-1));
 document.querySelector(".next-btn1").addEventListener("click", () => moveSlider(1));
 
